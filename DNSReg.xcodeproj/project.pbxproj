@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA8D60F01461BE25005A9D01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8D60EF1461BE25005A9D01 /* UIKit.framework */; };
+		FA8D60F21461BE25005A9D01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8D60F11461BE25005A9D01 /* Foundation.framework */; };
+		FA8D60F41461BE25005A9D01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8D60F31461BE25005A9D01 /* CoreGraphics.framework */; };
+		FA8D60FA1461BE25005A9D01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA8D60F81461BE25005A9D01 /* InfoPlist.strings */; };
+		FA8D60FC1461BE25005A9D01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8D60FB1461BE25005A9D01 /* main.m */; };
+		FA8D61001461BE25005A9D01 /* DNRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8D60FF1461BE25005A9D01 /* DNRAppDelegate.m */; };
+		FA8D61031461BE25005A9D01 /* DNRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8D61021461BE25005A9D01 /* DNRViewController.m */; };
+		FA8D61061461BE25005A9D01 /* DNRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8D61041461BE25005A9D01 /* DNRViewController.xib */; };
+		FA8D61141461F55B005A9D01 /* DNRResolveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8D61121461F55B005A9D01 /* DNRResolveViewController.m */; };
+		FA8D61151461F55B005A9D01 /* DNRResolveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8D61131461F55B005A9D01 /* DNRResolveViewController.xib */; };
+		FA8D612414630290005A9D01 /* ServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8D612314630290005A9D01 /* ServiceController.m */; };
+		FA8D612714630310005A9D01 /* DNSRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8D612614630310005A9D01 /* DNSRecord.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA8D60EB1461BE25005A9D01 /* DNSReg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNSReg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8D60EF1461BE25005A9D01 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FA8D60F11461BE25005A9D01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FA8D60F31461BE25005A9D01 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA8D60F71461BE25005A9D01 /* DNSReg-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DNSReg-Info.plist"; sourceTree = "<group>"; };
+		FA8D60F91461BE25005A9D01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA8D60FB1461BE25005A9D01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA8D60FD1461BE25005A9D01 /* DNSReg-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNSReg-Prefix.pch"; sourceTree = "<group>"; };
+		FA8D60FE1461BE25005A9D01 /* DNRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNRAppDelegate.h; sourceTree = "<group>"; };
+		FA8D60FF1461BE25005A9D01 /* DNRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNRAppDelegate.m; sourceTree = "<group>"; };
+		FA8D61011461BE25005A9D01 /* DNRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNRViewController.h; sourceTree = "<group>"; };
+		FA8D61021461BE25005A9D01 /* DNRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNRViewController.m; sourceTree = "<group>"; };
+		FA8D61051461BE25005A9D01 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DNRViewController.xib; sourceTree = "<group>"; };
+		FA8D61111461F55B005A9D01 /* DNRResolveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNRResolveViewController.h; sourceTree = "<group>"; };
+		FA8D61121461F55B005A9D01 /* DNRResolveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNRResolveViewController.m; sourceTree = "<group>"; };
+		FA8D61131461F55B005A9D01 /* DNRResolveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DNRResolveViewController.xib; sourceTree = "<group>"; };
+		FA8D612214630290005A9D01 /* ServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceController.h; sourceTree = "<group>"; };
+		FA8D612314630290005A9D01 /* ServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceController.m; sourceTree = "<group>"; };
+		FA8D612514630310005A9D01 /* DNSRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSRecord.h; sourceTree = "<group>"; };
+		FA8D612614630310005A9D01 /* DNSRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSRecord.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA8D60E81461BE25005A9D01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8D60F01461BE25005A9D01 /* UIKit.framework in Frameworks */,
+				FA8D60F21461BE25005A9D01 /* Foundation.framework in Frameworks */,
+				FA8D60F41461BE25005A9D01 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA8D60E01461BE25005A9D01 = {
+			isa = PBXGroup;
+			children = (
+				FA8D612214630290005A9D01 /* ServiceController.h */,
+				FA8D612514630310005A9D01 /* DNSRecord.h */,
+				FA8D612614630310005A9D01 /* DNSRecord.m */,
+				FA8D612314630290005A9D01 /* ServiceController.m */,
+				FA8D61111461F55B005A9D01 /* DNRResolveViewController.h */,
+				FA8D61121461F55B005A9D01 /* DNRResolveViewController.m */,
+				FA8D61131461F55B005A9D01 /* DNRResolveViewController.xib */,
+				FA8D60F51461BE25005A9D01 /* DNSReg */,
+				FA8D60EE1461BE25005A9D01 /* Frameworks */,
+				FA8D60EC1461BE25005A9D01 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA8D60EC1461BE25005A9D01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D60EB1461BE25005A9D01 /* DNSReg.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA8D60EE1461BE25005A9D01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D60EF1461BE25005A9D01 /* UIKit.framework */,
+				FA8D60F11461BE25005A9D01 /* Foundation.framework */,
+				FA8D60F31461BE25005A9D01 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA8D60F51461BE25005A9D01 /* DNSReg */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D60FE1461BE25005A9D01 /* DNRAppDelegate.h */,
+				FA8D60FF1461BE25005A9D01 /* DNRAppDelegate.m */,
+				FA8D61011461BE25005A9D01 /* DNRViewController.h */,
+				FA8D61021461BE25005A9D01 /* DNRViewController.m */,
+				FA8D61041461BE25005A9D01 /* DNRViewController.xib */,
+				FA8D60F61461BE25005A9D01 /* Supporting Files */,
+			);
+			path = DNSReg;
+			sourceTree = "<group>";
+		};
+		FA8D60F61461BE25005A9D01 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D60F71461BE25005A9D01 /* DNSReg-Info.plist */,
+				FA8D60F81461BE25005A9D01 /* InfoPlist.strings */,
+				FA8D60FB1461BE25005A9D01 /* main.m */,
+				FA8D60FD1461BE25005A9D01 /* DNSReg-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA8D60EA1461BE25005A9D01 /* DNSReg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA8D61091461BE25005A9D01 /* Build configuration list for PBXNativeTarget "DNSReg" */;
+			buildPhases = (
+				FA8D60E71461BE25005A9D01 /* Sources */,
+				FA8D60E81461BE25005A9D01 /* Frameworks */,
+				FA8D60E91461BE25005A9D01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DNSReg;
+			productName = DNSReg;
+			productReference = FA8D60EB1461BE25005A9D01 /* DNSReg.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA8D60E21461BE25005A9D01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = FA8D60E51461BE25005A9D01 /* Build configuration list for PBXProject "DNSReg" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FA8D60E01461BE25005A9D01;
+			productRefGroup = FA8D60EC1461BE25005A9D01 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA8D60EA1461BE25005A9D01 /* DNSReg */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA8D60E91461BE25005A9D01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8D60FA1461BE25005A9D01 /* InfoPlist.strings in Resources */,
+				FA8D61061461BE25005A9D01 /* DNRViewController.xib in Resources */,
+				FA8D61151461F55B005A9D01 /* DNRResolveViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA8D60E71461BE25005A9D01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8D60FC1461BE25005A9D01 /* main.m in Sources */,
+				FA8D61001461BE25005A9D01 /* DNRAppDelegate.m in Sources */,
+				FA8D61031461BE25005A9D01 /* DNRViewController.m in Sources */,
+				FA8D61141461F55B005A9D01 /* DNRResolveViewController.m in Sources */,
+				FA8D612414630290005A9D01 /* ServiceController.m in Sources */,
+				FA8D612714630310005A9D01 /* DNSRecord.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA8D60F81461BE25005A9D01 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA8D60F91461BE25005A9D01 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA8D61041461BE25005A9D01 /* DNRViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA8D61051461BE25005A9D01 /* en */,
+			);
+			name = DNRViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA8D61071461BE25005A9D01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FA8D61081461BE25005A9D01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA8D610A1461BE25005A9D01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DNSReg/DNSReg-Prefix.pch";
+				INFOPLIST_FILE = "DNSReg/DNSReg-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FA8D610B1461BE25005A9D01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DNSReg/DNSReg-Prefix.pch";
+				INFOPLIST_FILE = "DNSReg/DNSReg-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA8D60E51461BE25005A9D01 /* Build configuration list for PBXProject "DNSReg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8D61071461BE25005A9D01 /* Debug */,
+				FA8D61081461BE25005A9D01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA8D61091461BE25005A9D01 /* Build configuration list for PBXNativeTarget "DNSReg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8D610A1461BE25005A9D01 /* Debug */,
+				FA8D610B1461BE25005A9D01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA8D60E21461BE25005A9D01 /* Project object */;
+}
