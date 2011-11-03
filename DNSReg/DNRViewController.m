@@ -129,13 +129,15 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 @synthesize registrationController = registrationController_;
 @synthesize browseController = browseController_;
 @synthesize tableView = tableView_;
+@synthesize onOffButton;
 @synthesize peerServices = peerServices_;
 @synthesize peerID = peerID_;
 
 - (void)dealloc
 {
     [self stop];
- 
+
+    self.onOffButton = nil;
     self.registrationController = nil;
     self.browseController = nil;
     self.peerID = nil;
@@ -179,6 +181,7 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 - (void)viewDidUnload
 {
     [self setTableView:nil];
+    [self setOnOffButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -192,13 +195,11 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self start];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-    [self stop];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -213,6 +214,18 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 }
 
 #pragma mark - DNS-SD stuff
+
+- (void)toggleDiscovery:(id)sender
+{
+    if (self.registrationController) {
+        [self stop];
+        [self.onOffButton setTitle:@"Enable Discovery" forState:UIControlStateNormal];
+    }
+    else {
+        [self start];
+        [self.onOffButton setTitle:@"Disable Discovery" forState:UIControlStateNormal];
+    }
+}
 
 - (void)start
 {
@@ -265,7 +278,10 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 
 - (void)stop
 {
-    // TODO: implement me!
+    self.registrationController = nil;
+    self.browseController = nil;
+    [self.peerServices removeAllObjects];
+    [self.tableView reloadData];
 }
 
 - (void)addPeer:(DNSRecord *)peer

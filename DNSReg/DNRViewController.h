@@ -12,5 +12,8 @@
 @interface DNRViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UIButton *onOffButton;
+
+- (IBAction)toggleDiscovery:(id)sender;
 
 @end

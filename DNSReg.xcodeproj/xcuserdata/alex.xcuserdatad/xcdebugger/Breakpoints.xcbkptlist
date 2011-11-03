@@ -8,13 +8,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "DNRResolveViewController.m"
-         timestampString = "342034564.641759"
+         filePath = "DNSReg/DNRViewController.m"
+         timestampString = "342049624.417264"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "125"
-         endingLineNumber = "125"
-         landmarkName = "-viewDidAppear:"
+         startingLineNumber = "290"
+         endingLineNumber = "290"
+         landmarkName = "-addPeer:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -22,14 +22,42 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "DNRResolveViewController.m"
-         timestampString = "342034569.01122"
+         filePath = "DNSReg/DNRViewController.m"
+         timestampString = "342049624.417264"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51"
-         landmarkName = "ResolveCallback()"
-         landmarkType = "7">
+         startingLineNumber = "297"
+         endingLineNumber = "297"
+         landmarkName = "-removePeer:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "DNSReg/DNRViewController.m"
+         timestampString = "342049624.417264"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "281"
+         endingLineNumber = "281"
+         landmarkName = "-stop"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "DNSReg/DNRViewController.m"
+         timestampString = "342049624.417264"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "310"
+         endingLineNumber = "310"
+         landmarkName = "-tableView:numberOfRowsInSection:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
