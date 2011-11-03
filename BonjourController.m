@@ -1,12 +1,12 @@
 //
-//  ServiceController.m
+//  BonjourController.m
 //  DNSReg
 //
 //  Created by Alex Vollmer on 11/3/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ServiceController.h"
+#import "BonjourController.h"
 
 static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFDataRef address, const void *data, void *info)
 {
@@ -19,7 +19,7 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
   }
 }
 
-@implementation ServiceController
+@implementation BonjourController
 
 - (id)initWithServiceRef:(DNSServiceRef)ref
 {
@@ -80,4 +80,4 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 }
 
 
-@end // implementation ServiceController
+@end // implementation BonjourController

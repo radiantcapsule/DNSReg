@@ -1,5 +1,5 @@
 //
-//  ServiceController.h
+//  BonjourController.h
 //  DNSReg
 //
 //  Created by Alex Vollmer on 11/3/11.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <dns_sd.h>
 
-@interface ServiceController : NSObject
+@interface BonjourController : NSObject
 {
 	DNSServiceRef       fServiceRef;
 	CFSocketRef         fSocketRef;

@@ -9,7 +9,7 @@
 #import "DNRViewController.h"
 #import "DNRResolveViewController.h"
 #import "DNSRecord.h"
-#import "ServiceController.h"
+#import "BonjourController.h"
 
 #pragma mark - Function prototypes
 
@@ -42,8 +42,8 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 
 @property (nonatomic, retain) NSMutableArray *peerServices;    
 @property (nonatomic, retain) NSString *peerID;
-@property (nonatomic, retain) ServiceController *registrationController;
-@property (nonatomic, retain) ServiceController *browseController;
+@property (nonatomic, retain) BonjourController *registrationController;
+@property (nonatomic, retain) BonjourController *browseController;
 
 - (void)start;
 - (void)stop;
@@ -252,7 +252,7 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
         return;
     }
     
-    self.registrationController = [[[ServiceController alloc] initWithServiceRef:serviceRef] autorelease];
+    self.registrationController = [[[BonjourController alloc] initWithServiceRef:serviceRef] autorelease];
     [self.registrationController addToCurrentRunLoop];
     
     // 2. Now start browsing
@@ -272,7 +272,7 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
         return;
     }
     
-    self.browseController = [[[ServiceController alloc] initWithServiceRef:serviceRef] autorelease];
+    self.browseController = [[[BonjourController alloc] initWithServiceRef:serviceRef] autorelease];
     [self.browseController addToCurrentRunLoop];
 }
 

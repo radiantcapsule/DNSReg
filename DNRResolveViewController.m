@@ -10,7 +10,7 @@
 
 #import "DNRResolveViewController.h"
 #import "DNSRecord.h"
-#import "ServiceController.h"
+#import "BonjourController.h"
 
 static void ResolveCallback(
                             DNSServiceRef                       sdRef,
@@ -27,7 +27,7 @@ static void ResolveCallback(
 
 @interface DNRResolveViewController ()
 
-@property (nonatomic, retain) ServiceController *resolveController;
+@property (nonatomic, retain) BonjourController *resolveController;
 
 - (void)updatePeerWithHost:(NSString *)host port:(uint16_t)port;
 - (void)updateErrorMessage:(NSString *)message;
@@ -133,7 +133,7 @@ static void ResolveCallback(
                                                   self);
     
     if (kDNSServiceErr_NoError == error) {
-        self.resolveController = [[[ServiceController alloc] initWithServiceRef:serviceRef] autorelease];
+        self.resolveController = [[[BonjourController alloc] initWithServiceRef:serviceRef] autorelease];
         [self.resolveController addToCurrentRunLoop];
     }
     else {
