@@ -9,12 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <dns_sd.h>
 
-@interface DNRViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    @private
-    DNSServiceRef   serviceRef_;
-    CFSocketRef     socketRef_;
-    CFRunLoopRef    runLoopRef_;
-}
+@interface DNRViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 

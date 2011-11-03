@@ -9,6 +9,7 @@
 #import "DNRViewController.h"
 #import "DNRResolveViewController.h"
 #import "DNSRecord.h"
+#import "ServiceController.h"
 
 #pragma mark - Function prototypes
 
@@ -41,6 +42,8 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 
 @property (nonatomic, retain) NSMutableArray *peerServices;    
 @property (nonatomic, retain) NSString *peerID;
+@property (nonatomic, retain) ServiceController *registrationController;
+@property (nonatomic, retain) ServiceController *browseController;
 
 - (void)start;
 - (void)stop;
@@ -123,6 +126,8 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 
 @implementation DNRViewController
 
+@synthesize registrationController = registrationController_;
+@synthesize browseController = browseController_;
 @synthesize tableView = tableView_;
 @synthesize peerServices = peerServices_;
 @synthesize peerID = peerID_;
@@ -131,23 +136,14 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 {
     [self stop];
  
+    self.registrationController = nil;
+    self.browseController = nil;
     self.peerID = nil;
     self.peerServices = nil;
     
     self.tableView.dataSource = nil;
     self.tableView.delegate = nil;
     self.tableView = nil;
-
-    if (self->serviceRef_) {
-        DNSServiceRefDeallocate(self->serviceRef_);
-        self->serviceRef_ = NULL;
-    }
-    
-    if (self->socketRef_) {
-        CFSocketInvalidate(self->socketRef_);
-        CFRelease(self->socketRef_);
-        self->socketRef_ = NULL;
-    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -221,8 +217,9 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
 - (void)start
 {
     // 1. register this service
+    DNSServiceRef serviceRef;
     DNSServiceErrorType error;
-    error = DNSServiceRegister(&self->serviceRef_, 
+    error = DNSServiceRegister(&serviceRef,
                                kDNSServiceFlagsIncludeP2P, 
                                kDNSServiceInterfaceIndexAny, 
                                self.peerID.UTF8String,
@@ -242,8 +239,12 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
         return;
     }
     
+    self.registrationController = [[[ServiceController alloc] initWithServiceRef:serviceRef] autorelease];
+    [self.registrationController addToCurrentRunLoop];
+    
     // 2. Now start browsing
-    error = DNSServiceBrowse(&self->serviceRef_, 
+    serviceRef = NULL;
+    error = DNSServiceBrowse(&serviceRef,
                              kDNSServiceFlagsIncludeP2P, 
                              kDNSServiceInterfaceIndexAny, 
                              "_bananas._tcp.", 
@@ -258,23 +259,8 @@ static void ProcessSocketResult(CFSocketRef s, CFSocketCallBackType type, CFData
         return;
     }
     
-    // finally, get the DNS-SD socket and stick it in a run-loop to continue processing
-    int fd = DNSServiceRefSockFD(self->serviceRef_);
-    CFSocketContext context = { 0, self->serviceRef_, NULL, NULL, NULL };
-    self->socketRef_ = CFSocketCreateWithNative(kCFAllocatorDefault, fd, kCFSocketReadCallBack, ProcessSocketResult, &context);
-    if (self->socketRef_) {
-        CFRunLoopSourceRef rls = CFSocketCreateRunLoopSource(kCFAllocatorDefault, self->socketRef_, 0);
-        if (rls) {
-            CFRunLoopAddSource(CFRunLoopGetCurrent(), rls, kCFRunLoopDefaultMode);
-            CFRelease(rls);
-        }
-        else {
-            NSLog(@"Unable to create run-loop source");
-        }
-    }
-    else {
-        NSLog(@"Unable to create a socket reference to the DNS-SD daemon");
-    }
+    self.browseController = [[[ServiceController alloc] initWithServiceRef:serviceRef] autorelease];
+    [self.browseController addToCurrentRunLoop];
 }
 
 - (void)stop
